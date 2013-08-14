@@ -158,12 +158,6 @@ public class CTF extends JavaPlugin {
 		registerHooks();
 
 
-//		this.conm.loadConfig();
-		
-		
-		
-//		this.InvM.load();
-		
 		
 		
 		this.getServer().getConsoleSender().sendMessage(ChatColor.RED + "CTF is still in beta!");
