@@ -7,7 +7,9 @@ But after that, I want to make some changes.
 Goals:
 Making "computer players", mobs that are on the other team when there are not enough players to do real CTF.
 Making more classes and balancing them more.
-//TODO add more goals
+hello world
+//TODO add more goals 
 
 Thanks,
 Alexander Puckhaber
+Griffin Es
