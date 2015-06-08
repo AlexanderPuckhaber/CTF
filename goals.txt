@@ -1,0 +1,13 @@
+Hi, I'm forking this because I'm going to try to add stuff to it.
+This is my first time using github, I'm just forking it because I think that's how it works.
+
+The first thing I'll do is read and comment your code to figure out what exactly it does.
+But after that, I want to make some changes.
+
+Goals:
+Making "computer players", mobs that are on the other team when there are not enough players to do real CTF.
+Making more classes and balancing them more.
+//TODO add more goals
+
+Thanks,
+Alexander Puckhaber
