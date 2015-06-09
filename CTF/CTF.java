@@ -13,7 +13,8 @@ import net.askarian.MisterErwin.CTF.listener.TrackerListener;
 import net.askarian.MisterErwin.CTF.threads.BroadcasterThread;
 import net.askarian.MisterErwin.CTF.threads.HoldChatThread;
 import net.askarian.MisterErwin.CTF.threads.lookingtimer;
-import net.askarian.MisterErwin.CTF.threads.takeItemThread;
+//this bit is missing!
+//import net.askarian.MisterErwin.CTF.threads.takeItemThread;
 import net.askarian.MisterErwin.CTF.util.CTFUtils;
 import net.askarian.MisterErwin.CTF.util.IconMenuManager;
 import net.askarian.MisterErwin.CTF.util.InventoryManager;
@@ -158,6 +159,12 @@ public class CTF extends JavaPlugin {
 		registerHooks();
 
 
+//		this.conm.loadConfig();
+		
+		
+		
+//		this.InvM.load();
+		
 		
 		
 		this.getServer().getConsoleSender().sendMessage(ChatColor.RED + "CTF is still in beta!");
@@ -270,8 +277,8 @@ public class CTF extends JavaPlugin {
 		else if (this.cm.cm == ChatMode.CHAT)
 			this.CHID = getServer().getScheduler().scheduleSyncRepeatingTask(this,
 					new HoldChatThread(this), 60L, 20 * 20L);
-		this.tITID = getServer().getScheduler().scheduleSyncRepeatingTask(this,
-				new takeItemThread(this), 60L, 20L);
+		//this.tITID = getServer().getScheduler().scheduleSyncRepeatingTask(this,
+		//		new takeItemThread(this), 60L, 20L);
 		this.LTID = getServer().getScheduler().scheduleSyncRepeatingTask(this,
 				new lookingtimer(this), 60L, 20L);
 

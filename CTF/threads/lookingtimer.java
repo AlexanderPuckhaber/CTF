@@ -28,7 +28,7 @@ public class lookingtimer implements Runnable{
 	@Override
 	public void run() {
 		
-		if (plugin.getServer().getOnlinePlayers().length == 0)
+		if (plugin.getServer().getOnlinePlayers().size() == 0)
 			return;
 		if (!plugin.Game.idle && !plugin.Game.running && !plugin.Game.after)
 			return;

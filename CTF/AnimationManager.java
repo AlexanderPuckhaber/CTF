@@ -1,4 +1,4 @@
-
+package net.askarian.MisterErwin.CTF;
 
 import java.util.HashMap;
 import java.util.Iterator;
