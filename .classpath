@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/alexanderpuckhaber/Desktop/Spigot/craftbukkit-1.8.6.jar"/>
+	<classpathentry kind="lib" path="/Users/alexanderpuckhaber/Documents/Spigot-API/target/spigot-api-1.7.10-R0.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
