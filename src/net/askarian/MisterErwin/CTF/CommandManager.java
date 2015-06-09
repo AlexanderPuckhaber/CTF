@@ -1,6 +1,7 @@
 package net.askarian.MisterErwin.CTF;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,6 +13,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
+
+import com.google.common.collect.Lists;
 
 
 public class CommandManager
@@ -240,7 +243,18 @@ public void stop(boolean next){
   }
   
   public void public_start (boolean vote) {
-	  this.plugin.Game.start(plugin.getServer().getOnlinePlayers()[0], vote, true);
+	  //gets a list of all players on the server
+	  List<Player> list = Lists.newArrayList();
+	  for (World world : Bukkit.getWorlds()) {
+		  
+		  list.addAll(world.getPlayers());
+	  }
+	  //checks if they are in a game by checking if they are on a team
+	  for (Player p : list) {
+		  if (plugin.tm.getTeam(p) == "A" || plugin.tm.getTeam(p) == "B") {
+			  this.plugin.Game.start(p, vote, true);
+		  }
+	  }
 	  this.start();
   }
 
@@ -288,8 +302,19 @@ public void stop(boolean next){
 
 
   public void next() {
-	  CommandSender cs = plugin.getServer().getOnlinePlayers()[0];
-	  next (cs);
+	//gets a list of all players on the server
+	  List<Player> list = Lists.newArrayList();
+	  for (World world : Bukkit.getWorlds()) {
+		  
+		  list.addAll(world.getPlayers());
+	  }
+	  //checks if they are in a game by checking if they are on a team
+	  for (Player p : list) {
+		  if (plugin.tm.getTeam(p) == "A" || plugin.tm.getTeam(p) == "B") {
+			  CommandSender cs = (CommandSender) list;
+			  next (cs);
+		  }
+	  }
   }
   
 

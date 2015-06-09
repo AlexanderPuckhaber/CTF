@@ -28,11 +28,12 @@ public class Tags {
     
     
     public void setTag(Player p, ChatColor color){
-
+    	/*
     	if (this.namedPlayer.containsKey(p.getName()))
     		this.namedPlayer.remove(p.getName());
     	
     	this.namedPlayer.put(p.getName(), color);
+    	*/
     	
     	refreshPlayer(p);
     	
@@ -44,9 +45,9 @@ public class Tags {
     {
     	//removed tagAPI stuff as it is deprecated
 		if (plugin.tm.getTeam(p) == "A")
-			p.getInventory().setHelmet(new ItemStack(Material.WOOL, 1 , DyeColor.RED.getWoolData()));
+			p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)4));
 		else if (plugin.tm.getTeam(p) == "B")
-			p.getInventory().setHelmet(new ItemStack(Material.WOOL, 1 , DyeColor.BLUE.getWoolData()));
+			p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)1));
 
 	}
     

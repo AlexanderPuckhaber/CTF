@@ -378,7 +378,7 @@ public class CTFGame {
 		String vm = plugin.MM.getVoteMap();
 		
 		if ( vote && vm != null){
-			start (p, vm);
+			start ((Player)p, vm);
 			this.lastMap = vm;
 			vm = null;
 			return;
@@ -417,7 +417,7 @@ public class CTFGame {
 	    	int i = new Random().nextInt(Maps.size());
 	    	lastworld = i ;
 	    	String worldname = Maps.get(i);
-	    	start (p, worldname);
+	    	start ((Player)p, worldname);
 	    	
 	    	return;
 	    }
@@ -448,11 +448,11 @@ public class CTFGame {
 	    }
 				
 	    String worldname = Maps.get(lastworld);
-		start (p, worldname);
+		start ((Player)p, worldname);
 		
 	}
 	
-	public void start(CommandSender p, String mapname) {
+	public void start(Player p, String mapname) {
 		p.sendMessage("Loading World: " + mapname + "(" + this.lastworld);
 		World w = plugin.MM.loadMap(mapname);
 		this.lastMap = mapname;
