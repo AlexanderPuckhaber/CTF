@@ -8,6 +8,7 @@ Goals:
 Making "computer players", mobs that are on the other team when there are not enough players to do real CTF.
 Making more classes and balancing them more.
 hello world
+hello again
 //TODO add more goals 
 
 Thanks,
