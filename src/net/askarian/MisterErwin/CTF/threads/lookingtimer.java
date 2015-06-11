@@ -28,6 +28,7 @@ public class lookingtimer implements Runnable{
 	@Override
 	public void run() {
 		
+		//if there aren't any players or the game is not running, don't run this
 		if (plugin.getServer().getOnlinePlayers().size() == 0)
 			return;
 		if (!plugin.Game.idle && !plugin.Game.running && !plugin.Game.after)
@@ -172,7 +173,7 @@ public class lookingtimer implements Runnable{
 							plugin.Game.time2start = plugin.Game.pretime;plugin.Game.time2start = plugin.Game.pretime;
 							plugin.Game.premessage = ChatColor.RED + "This Map is in build-only mode!  Use /CtT next";
 						}else{
-							plugin.log.info(" Starting a new Match, cause no Player has the perm. to set the missing Locations!");
+							plugin.log.info(" Starting a new Match, because no Player has the perm. to set the missing Locations!");
 							plugin.comm.next();
 						}
 						

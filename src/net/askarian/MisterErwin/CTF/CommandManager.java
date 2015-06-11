@@ -258,8 +258,9 @@ public void stop(boolean next){
 	  this.start();
   }
 
+  //This starts the game
   private void start() {
-    
+    System.out.println("CommandManager.start()");
     Iterator<?> wlist = plugin.Game.PlayerStorage.entrySet().iterator();
 	Player p;
 	String[] ite;

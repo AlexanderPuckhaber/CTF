@@ -1,0 +1,28 @@
+///////////////////////////////////////////
+Instructions for building the dependencies:
+
+    ∆∆   ###
+    00    |
+____--____|
+    ||
+    ||
+    ||
+    /\
+   /  \
+  /    \
+
+Step 1 - Download BuildTools.jar from https://hub.spigotmc.org/jenkins/job/BuildTools/ and put it in a folder
+Step 2 - Run BuildTools.jar with "java -jar BuildTools.jar".  I think you need git for this
+Step 3 - There will be a file named craftbukkit<version>.jar in the newly created spigot folder
+Step 4 - Right click on the ctf project folder in eclipse, click properties, java build path, libraries, add external jar. Select craftbukkit<version>.jar
+Step 5 - Get maven for eclipse.  Good luck!
+Step 6 - Clone the Spigot Api from https://github.com/SpigotMC/Spigot-API
+Step 7 - Create a new maven project in eclipse and select the newly cloned repository as the workspace
+Step 8 - Right click on the project, click run as -> Maven install.  Hopefully this will create a spigot-api jar file.  Add this as an external jar to the ctf project.
+Now you are done building the dependencies!  Have a nice day!
+            _
+          /   ) )
+         (  (   )
+           \  /
+            ||                <ˆ|_     
+____________||_________________|_|______________________________________

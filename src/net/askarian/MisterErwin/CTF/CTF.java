@@ -43,7 +43,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 
 public class CTF extends JavaPlugin {
-  public Logger log;
+    public Logger log;
 	public TeamManager tm;
 	public ChatManager cm;
 	public Tracker tracker;
@@ -117,7 +117,7 @@ public class CTF extends JavaPlugin {
 		trans.register("backwith/class", "Go back in the game with /class");
 		trans.register("killedby", "You had been killed by &P");
 		trans.register("youkilled", "You killed &P");
-		trans.register("killedyourself", "You killed yourself :D");
+		trans.register("killedyourself", "Careful!");
 		
 		trans.register("flagmustbeathome", ChatColor.RED + "Your Team's Flag must be at home!");
 		trans.register("Acaptured", ChatColor.RED + "&P" + ChatColor.YELLOW + " has captured the " + ChatColor.BLUE + "Blue" + ChatColor.YELLOW + "Team's flag!");
