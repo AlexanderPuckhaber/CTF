@@ -1,6 +1,7 @@
 package net.askarian.MisterErwin.CTF;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import net.askarian.MisterErwin.CTF.API.events.ChangeAwayFromClassEvent;
 import net.askarian.MisterErwin.CTF.API.events.ChangeToClassEvent;
@@ -109,7 +110,16 @@ public class TeamManager
     else if (this.TeamA.size() < this.TeamB.size()) {
       setTeam(p, "A");
     }
+    else if (this.TeamB.size() < this.TeamA.size()) {
+      setTeam(p, "B");
+    }
     else {
+      Random r = new Random();
+      //creates random number from 0 to 1
+      int rnd = r.nextInt(2);
+      if (rnd == 0)
+      setTeam(p, "A");
+      else
       setTeam(p, "B");
     }
     p.getInventory().clear();
