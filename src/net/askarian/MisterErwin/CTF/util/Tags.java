@@ -6,6 +6,9 @@ import net.askarian.MisterErwin.CTF.CTF;
 //import net.minecraft.server.v1_4_R1.EntityHuman;
 //import net.minecraft.server.v1_4_R1.Packet20NamedEntitySpawn;
 
+import net.playerforcehd.nametags.TagManager.TagManager;
+import net.playerforcehd.nametags.TagManager.TagPlayer;
+
 import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
@@ -18,12 +21,13 @@ import org.bukkit.plugin.Plugin;
 public class Tags {
  
   private boolean tapi = false;
-	private CTF plugin;
+	public CTF plugin;
 	
 	private HashMap<String,ChatColor> namedPlayer = new HashMap();
- 
+
+	
     public Tags(CTF pl){
-        
+        plugin = pl;
     }
     
     
@@ -36,20 +40,36 @@ public class Tags {
     	*/
     	
     	refreshPlayer(p);
-    	
     }
     
     
     //gives players wool blocks on their heads for teams
-    public void refreshPlayer(Player p)
+	public void refreshPlayer(Player p)
     {
-    	//removed tagAPI stuff as it is deprecated
-		if (plugin.tm.getTeam(p) == "A")
-			p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)4));
-		else if (plugin.tm.getTeam(p) == "B")
-			p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)1));
+		String team = "";
+		if (plugin.tm.isinGame(p))
+			team = plugin.tm.getTeam(p);
+		
+    	if(tapi){
+    	TagPlayer tagplayer = new TagPlayer(p);
+    	TagManager tagmanager =  new TagManager(tagplayer);
 
+    	if (team == "A")
+    		tagmanager.setPrefix(p, "&1");
+    	else if (team == "B")
+    		tagmanager.setPrefix(p, "&C");
+    	
+    	}
+    	else{
+    	
+			if (team == "A")
+				p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)4));
+			else if (team == "B")
+				p.getInventory().setHelmet(new ItemStack(Material.GLASS, 1 , (byte)1));
+			
+    	}
 	}
+	
     
     public boolean hascoloredname(String s){
     	return this.namedPlayer.containsKey(s);

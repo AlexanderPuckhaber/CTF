@@ -37,7 +37,7 @@ public class PlayerListener
   @EventHandler
   public void onPlayerChat(AsyncPlayerChatEvent event)
   {
-    if ((this.plugin.tm.getTeam(event.getPlayer()) != "A") && (this.plugin.tm.getTeam(event.getPlayer()) != "B"))
+    if (!this.plugin.tm.isinGame(event.getPlayer()))
       return;
     if (this.plugin.Game.running || this.plugin.Game.idle || this.plugin.Game.after ) {
       event.setCancelled(this.plugin.cm.PlayerChat(event.getPlayer(), event.getMessage()));
