@@ -53,6 +53,8 @@ public class Tags {
     	if(tapi){
     	TagPlayer tagplayer = new TagPlayer(p);
     	TagManager tagmanager =  new TagManager(tagplayer);
+    	
+   
 
     	if (team == "A")
     		tagmanager.setPrefix(p, "&1");
